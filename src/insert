@@ -1,0 +1,10 @@
+// ajout dans la base de donnée 
+
+    DB::table('articles')->insert(
+ 
+            array(
+                array(
+                    'name' => 'berilium',
+                    
+                )             
+            ));

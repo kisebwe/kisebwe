@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Articulus7-create an article</title>
+        <?php include ("Style.phtml") ?>
+     
+    </head>
+    <body>
+       
+
+<?php include ("Header.phtml") ?>
+
+ <h2> Add your great article ! </h2> <br>
+
+<div>
+
+<p>
+<form action="/file" method="post" enctype="multipart/form-data">
+        <p>
+        		<p> Tilte :<input type="text" name="title"> </p>
+  				
+ 				<p> Summary :  <textarea type="text" name="summary"  rows="5" cols="50">  </textarea></p>
+
+                <p> Comment :<input type="text" name="comment"></p>
+                Formulaire d'envoi de fichier :<br />
+                <input type="file" name="ImageArticle" /><br />
+                <input type="submit" value="Envoyer le fichier" />
+        </p>
+        
+</form>
+</p>
+
+</div>
+
+<?php include ("Footer.phtml") ?>
+      
+      
+    </body>
+</html>

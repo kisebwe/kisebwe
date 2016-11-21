@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<?php  
+
+
+
+
+
+// Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+if (isset($_FILES['ImageArticle']) AND $_FILES['ImageArticle']['error'] == 0)
+{
+        // Testons si le fichier n'est pas trop gros
+        if ($_FILES['ImageArticle']['size'] <= 25000000)
+        {
+                // Testons si l'extension est autorisée
+                $infosfichier = pathinfo($_FILES['ImageArticle']['name']);
+                $extension_upload = $infosfichier['extension'];
+                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
+                if (in_array($extension_upload, $extensions_autorisees))
+                {
+                        // On peut valider le fichier et le stocker définitivement
+         move_uploaded_file($_FILES['ImageArticle']['tmp_name'], 
+
+                '/home/hmkisebwe/last/first/public/img/' .
+
+                 basename($_FILES['ImageArticle']['name']));
+                
+
+                
+
+                     echo "L'envoi a bien été effectué !";
+                }
+        }
+}
+
+
+ ?>
+
+ <?php $ImageName=  basename($_FILES['ImageArticle']['name']); ?>
+
+
+
+
+
+<form name="form1" method="post" action="/add"> 
+<input type="hidden" name="title" value="<?= $_POST['title'] ?>" /> 
+<input type="hidden" name="summary" value="<?= $_POST['summary'] ?>" />
+<input type="hidden" name="comment" value="<?= $_POST['comment'] ?>" />
+<input type="hidden" name="imageArticle" value="<?= $ImageName ?>" />
+</form> 
+<script type="text/javascript"> 
+ document.form1.submit(); //on envoie le formulaire vers ma-page.php 
+</script> 
+
+
+
+
+
+
+ <?php 
+
+/*
+header('Location: /');
+exit();*/
+?>
+
+</body>
+</html>
+

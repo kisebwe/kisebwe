@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Articulus7-Presentation</title>
+
+    <?php include ("Style.phtml"); ?>
+    </head>
+    <body>
+
+
+    <?php include ("Header.phtml"); ?>
+       
+       
+
+
+       <div>  <img src="/img/<?= $OneArticle->ImageArticle ?> "> </p>
+         
+            <h2> <?= $OneArticle->Title ?></h2> <br> 
+
+            <p>  <?= $OneArticle->Summary ?></p>
+
+    <p>  Created : <?= $OneArticle->created_at  ?>  Update  :<?= $OneArticle->updated_at ?></p>
+             
+
+             </div> 
+
+
+
+
+    <?php include ("Footer.phtml"); ?>
+      
+      
+    </body>
+</html>

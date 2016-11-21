@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Articulus7-Update</title>
+       <?php include ("Style.phtml"); ?>
+    </head>
+    <body>
+
+    <?php include ("Header.phtml"); ?>
+        <h1>Update  your great article ! </h1>
+        
+
+  <form action="/upd/<?= $Uarticle->id ?>" method="POST" >
+
+  <p> Tilte   :<input type="text" name="title" value="<?= $Uarticle->Title ?>"> </p>
+  <p> Comment :<input type="text" name="comment"  value="<?= $Uarticle->Comment ?>"></p>
+  <p> Summary : <textarea type="text" name="summary"  rows="5" cols="50">  <?= $Uarticle->Summary ?></textarea> </p>
+
+  <input type="submit" name="Valider">
+
+</form>         
+
+      <?php include ("Footer.phtml"); ?>
+      
+    </body>
+</html>
