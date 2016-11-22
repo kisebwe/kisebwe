@@ -26,7 +26,7 @@ if (isset($_FILES['ImageArticle']) AND $_FILES['ImageArticle']['error'] == 0)
                         // On peut valider le fichier et le stocker définitivement
          move_uploaded_file($_FILES['ImageArticle']['tmp_name'], 
 
-                '/home/hmkisebwe/last/first/public/img/' .
+                '/app/public/img/' .
 
                  basename($_FILES['ImageArticle']['name']));
                 
